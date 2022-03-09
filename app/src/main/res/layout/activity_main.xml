@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:id="@+id/scrollview"
+    android:layout_height="wrap_content">
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        android:paddingStart="10dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/latest_movies_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:textSize="16sp"
+            android:text="Latest Movies" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/now_playing_movies"
+            android:checkable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Now Playing" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/top_rated"
+            android:layout_width="wrap_content"
+            android:checkable="true"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Top rated" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/favList"
+            android:layout_width="wrap_content"
+            android:checkable="true"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Favourites" />
+
+    </com.google.android.material.chip.ChipGroup>
+</HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scrollview"
+        android:padding="10dp" />
+
+</RelativeLayout>
