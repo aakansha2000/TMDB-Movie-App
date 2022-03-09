@@ -31,10 +31,10 @@ class MainViewModel @Inject constructor(
         newList = mutableListOf<Result>()
         categoryDefault.value = cat
         Log.d("changecatvalue", "changeCatValue: ${categoryDefault.value}")
-        getMovieList()
+        getMoviesList()
     }
 
-    private fun getMovieList() {
+    private fun getMoviesList() {
         viewModelScope.launch {
             val response = movieService.getMovieList(categoryDefault.value, "en-US", page.value)
             if (response.isSuccessful && response.body() != null) {
@@ -56,6 +56,6 @@ class MainViewModel @Inject constructor(
 
     fun getNextPage() {
         page.value = page.value?.plus(1)
-        getMovieList()
+        getMoviesList()
     }
 }
